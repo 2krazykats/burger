@@ -1,7 +1,7 @@
 body {
   /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: lightcoral;
+  background-color: lightyellow;
 }
 
 a {
@@ -44,4 +44,13 @@ a {
 
 .left-side{
   padding-left: 10%;
+}
+
+.devoured-btn {
+  margin-bottom: 3%;
+  color: green;
+}
+
+.deleteBurger {
+  color: red;
 }
