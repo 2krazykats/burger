@@ -1,0 +1,78 @@
+
+
+<!-- Heading container contains the image and title -->
+<div class="container main-container">
+  <div class="row">
+   <!-- <div id="burgerimg"><iframe src="https://giphy.com/embed/WBTUlyKBVlTTa" width="50%" height="50%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    </div> -->
+
+    <div id="burgerimg" class="col-lg-6"><iframe src="https://giphy.com/embed/WBTUlyKBVlTTa" width="100%" height="100%"  frameBorder="0"></iframe>
+    </div>
+  </div>
+  <div class="row">
+    <div class="montserrat col-lg-6" style="margin-left:15%">
+      <strong>Eat your favorite burgers!</strong>
+    </div>
+  </div>
+</div>
+
+
+<!-- This is where the hbs stuff goes -->
+
+
+  <div class="burger-list-container">
+    <div class="row">
+      <div class="col-lg-6 left-side">
+        <div class="uneaten-col"><h3>Uneaten Burgers</h3>
+          <ul>
+            {{#each burgers}}
+              {{#unless devoured}}
+                <li>
+                  {{this.burger_name}}
+                  <button class="devoured-btn" data-id="{{this.id}}" data-burgerDevoured="{{this.devoured}}">
+                  Eat that burger!
+                  </button>
+                </li>
+                {{/unless}}
+              {{/each}}
+            </ul>
+         </div>   
+     </div>
+
+     
+
+    <div class="col-lg-6 right-side">
+      <div class="devoured-col"><h3>Move Burger to Uneaten column</h3>
+        <ul>
+          {{#each burgers}}
+           {{#if devoured}}
+              <li>
+                {{this.burger_name}}
+                  <button class="devoured-btn" data-id="{{this.id}}" data-burgerDevoured="{{this.devoured}}">
+                  {{#if this.devoured}}Move Burger!{{/if}}
+                </button>  
+              </li>  
+            {{/if}}
+          {{/each}}
+        </ul> 
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  <form class="create-form">
+    <div class="container-input">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="input-group input-group-lg" style="margin-left: 20%; margin-top:10%">
+            <input type="text" class="form-control burger-input" placeholder="Enter a burger name..." aria-label="Enter a burger name...">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button">Add!</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div> 
